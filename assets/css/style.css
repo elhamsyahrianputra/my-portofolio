@@ -17,6 +17,9 @@ html[data-theme-mode = 'dark'] {
 }
 
 /* ---------- Desktop Version ------------ */
+html {
+	scroll-behavior: smooth;
+}
 
 body {
 	padding: 0 10%;
@@ -290,7 +293,7 @@ section p {
 		font-family: Dongle, 'sans-serif';
 		font-size: 2.2em;
 		color: var(--text-color);
-		padding-top: 70px;
+		padding-top: 90px;
 	}
 
 	section p {
