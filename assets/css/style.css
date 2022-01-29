@@ -11,12 +11,22 @@ html[data-theme-mode = 'dark'] {
 	--text-color:  #EEEEEE;
 }
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* ---------- Desktop Version ------------ */
+
 body {
 	padding: 0 10%;
 	margin: 0;
 	background-color: var(--bg-color);
 	transition: all 1s;
+	font-family: Dongle;
 }
+
+/* Header */
 
 .header h1 {
 	color: var(--text-color);
@@ -24,11 +34,13 @@ body {
 	font-size: 6em;
 	font-weight: 400;
 	line-height: 0.6em;
-	height: 3em;
+	height: 3.6em;
 	display: flex;
 	align-items: flex-end;
+	margin-bottom: 60px;
 }
 
+/* Navbar */
 .navbar {
 	position: sticky;
 	top: 0;
@@ -44,18 +56,20 @@ body {
 	height: 70px;
 	display: flex;
 	align-items: center;
-
-
 }
 
-.navbar .navbar-item:nth-child(1) {
+.navbar .navbar-item:nth-child(2) {
 	justify-content: space-between;
 	width: 50%;
 }
 
-.navbar .navbar-item:nth-child(2) {
-	justify-content: space-evenly;
+.navbar .navbar-item:nth-child(3) {
+	justify-content: flex-end;
 	width: 30%;
+}
+
+.navbar .navbar-brand {
+	display: none;
 }
 
 .navbar .navbar-item a {
@@ -71,37 +85,179 @@ body {
 	transform: translateY(-8px);
 }
 
-.navbar .navbar-item .navbar-toggle button{
+.navbar .navbar-sosmed {
+	display: flex;
+	justify-content: space-between;
+	width: 180px;
+	padding-right: 30px;
+}
+
+.navbar .theme-toggle{
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
 	transition: all 1.5s;
 }
 
-.navbar .navbar-item .navbar-toggle button a{
+.navbar .theme-toggle a{
 	background-color: transparent;
 	border: none;
 	cursor: pointer;
 	transition: all 1.5s;
 }
 
+.navbar-toggle .menu-toggle {
+	display: none;
+}
+
+
+/* Session Parent */
+section h1 {
+	font-family: Dongle, 'sans-serif';
+	font-size: 4em;
+	color: var(--text-color);
+	padding-top: 70px;
+}
+
+section p {
+	font-family: Dongle, 'sans-serif';
+	font-size: 2em;
+	color: var(--text-color);
+}
+
+/* About Session */
 #about {
- background-color: blue;
- margin-top: 100px;
+ margin-top: 200px;
  height: 100vh;
  z-index: 1;
 }
 
+/* Blog Session */
 #blog {
- background-color: red;
  margin-top: 100px;
  height: 100vh;
  z-index: 1;
 }
 
+/* Contact Session */
 #contact {
- background-color: green;
  margin-top: 100px;
  height: 100vh;
  z-index: 1;
 }
+
+
+
+/* ---------- Tablet Version ------------ */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* ---------- Mobile Version ------------ */
+@media only screen and (max-width: 576px) {
+  	
+	body {
+		padding: 0 20px;
+	}
+
+	.header h1 {
+		visibility: hidden;
+		text-align: center;
+		font-size: 2.7em;
+	}
+
+	/* Navbar */
+	.navbar {
+		background-color: var(--bg-color);
+		position: fixed;
+		width: 100%;
+		height: 90px;
+		left: 0;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	.navbar .navbar-brand {
+		display: flex;
+	}
+
+	.navbar .navbar-brand p {
+		font-size: 1.7rem;
+		color: var(--text-color);
+	}
+
+	.navbar .navbar-item {
+		height: 200px;
+		transition: 1.2s;
+	}
+
+	.navbar .navbar-item a {
+		font-size: 1.4rem;
+	}
+
+	.navbar .navbar-item:nth-child(2) {
+		flex-direction: column;
+		align-items: flex-start;
+		position: fixed;
+		top: 90px;
+		right: -60%;
+		padding: 10px 0 100% 30px;
+		background-color: var(--bg-color);
+		opacity: 0.9;	
+	}
+
+	.navbar .navbar-sosmed {
+		display: none;
+	}
+
+	.navbar .navbar-toggle {
+		display: flex;
+		justify-content: space-between;
+		width: 70px;
+		
+	}
+
+	.navbar-toggle .menu-toggle {
+		display: flex;
+		background-color: transparent;
+		border: none;
+		flex-direction: column;
+		justify-content: space-between;
+		height: 20px;
+		cursor: pointer;
+	}
+
+	.navbar-toggle .menu-toggle span {
+		display: block;
+		width: 28px;
+		height: 3px;
+		background-color: var(--text-color);
+		border-radius: 3px;
+	}
+
+	.navbar-toggle .menu-toggle span{
+		transition: transform 1.0s, opacity 0.5s;
+	}
+
+	.navbar-toggle .menu-toggle span:nth-child(1) {
+		transform-origin: 0 0;
+	}
+
+	.navbar-toggle .menu-toggle span:nth-child(3) {
+		transform-origin: 0 100%;
+	}
+
+	.navbar-toggle .menu-toggle-animation span:nth-child(1) {
+		transform: rotate(45deg) translate(-1px, -1px); 
+	}
+
+	.navbar-toggle .menu-toggle-animation span:nth-child(2) {
+		opacity: 0;
+	}
+
+	.navbar-toggle .menu-toggle-animation span:nth-child(3) {
+		transform: rotate(-45deg) translate(-1px, 0px); 
+	}
+
+}
+
